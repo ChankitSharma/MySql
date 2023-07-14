@@ -1,11 +1,11 @@
 use employee;
 create table employee_salary
 (
-	id int unsigned not null unique auto_increment primary key,
-    fk_employee int unsigned not null,
-    salary int not null,
-    date DATE,
-    FOREIGN KEY (FK_of_employee) REFERENCES employee(Id)
+id int unsigned not null unique auto_increment primary key,
+fk_employee int unsigned not null,
+salary int not null,
+date DATE,
+FOREIGN KEY (FK_of_employee) REFERENCES employee(Id)
 );
 insert into employee_salary (Id, FK_of_employee, Salary, date) values 
 (1,1,12000,'2023-5-1'),

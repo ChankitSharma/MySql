@@ -1,8 +1,8 @@
 use employee;
 create table hobby
 (
-	id int unsigned not null unique auto_increment primary key,
-    name varchar(45) not null
+id int unsigned not null unique auto_increment primary key,
+name varchar(45) not null
 );
 insert into hobby values 
 (1,"Running"),
