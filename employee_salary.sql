@@ -1,9 +1,9 @@
 use employee;
 create table employee_salary
 (
-	Id int unsigned not null unique auto_increment primary key,
-    FK_of_employee int unsigned not null,
-    Salary int not null,
+	id int unsigned not null unique auto_increment primary key,
+    fk_employee int unsigned not null,
+    salary int not null,
     date DATE,
     FOREIGN KEY (FK_of_employee) REFERENCES employee(Id)
 );

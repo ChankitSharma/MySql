@@ -1,8 +1,8 @@
 use employee;
 create table employee_hobby 
 (
-	Id int unsigned not null unique auto_increment primary key,
-    fk_of_employee int unsigned not null,
+	id int unsigned not null unique auto_increment primary key,
+    fk_employee int unsigned not null,
     fk_hobby int unsigned not null,
 	FOREIGN KEY (fk_of_employee) REFERENCES employee(Id),
     FOREIGN KEY (fk_hobby) REFERENCES employee(id)
