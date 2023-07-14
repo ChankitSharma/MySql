@@ -17,12 +17,3 @@ select * from employee_hobby;
 update employee_hobby set fk_of_employee = 4 where id = 5;
 delete from employee_hobby where id = 3;
 truncate table employee_hobby;
-
-/* Create a separate select queries to get a hobby, employee, employee_salary, employee_hobby. */
-select * from employee_hobby
-inner join hobby
-on employee_hobby.fk_hobby = hobby.id
-inner join employee 
-on employee_hobby.fk_of_employee = employee.id
-inner join employee_salary
-on employee_salary.FK_of_employee = employee_hobby.id;
