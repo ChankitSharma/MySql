@@ -1,12 +1,12 @@
 use employee;
 create table employee
 (
-	id int unsigned not null unique auto_increment primary key,
-    first_name varchar(45) not null,
-    last_name varchar(45) not null,
-    age tinyint not null ,
-    mobile_Number varchar(20),
-    address text
+id int unsigned not null unique auto_increment primary key,
+first_name varchar(45) not null,
+last_name varchar(45) not null,
+age tinyint not null ,
+mobile_Number varchar(20),
+address text
 );
 insert into employee values 
 (1,"Rohan","Parmar",30,8971679301,"Ahmedabad"),
