@@ -13,10 +13,10 @@ insert into employee_hobby (fk_employee_id, fk_hobby_id) values
 	(2,2),
 	(2,1),
 	(3,5),
-    (1,2),
-    (1,4),
-    (1,5);
-    
+	(1,2),
+	(1,4),
+	(1,5);
+
 select * from employee_hobby;
 update employee_hobby set fk_employee_id = 5 where id = 5;
 delete from employee_hobby where id = 3;
