@@ -1,8 +1,8 @@
 /* Create a separate select queries to get a hobby, employee, employee_salary, employee_hobby. */
-	select * from employee;
-    select * from employee_hobby;
-	select * from employee_salary;
-    select * from hobby;
+select * from employee;
+select * from employee_hobby;
+select * from employee_salary;
+select * from hobby;
     
 /* Create a select single query to get all employee name, all hobby_name in single column */
 
