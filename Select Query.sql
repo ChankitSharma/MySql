@@ -19,11 +19,11 @@ from
 /* Create a select query to get  employee name, his/her employee_salary */
 
 select 
-	employee.first_name, 
-	employee_salary.salary 
+	e.first_name, 
+	es.salary
 from 
-	employee 
-	inner join employee_salary on employee_salary.fk_employee_id = employee.id;
+	employee e
+	inner join employee_salary es on es.fk_employee_id = e.id;
 
 /* Create a select query to get employee name, total salary of employee, hobby name(comma-separated - you need to use subquery for hobby name) */
 
