@@ -30,7 +30,7 @@ from
 select
 	e.first_name, 
 	e.last_name, 
-	es.salary, 
+	sum(es.salary) as salary, 
   (
     select 
       GROUP_CONCAT(
@@ -46,4 +46,5 @@ select
   ) as Hobby_Names 
 from 
   employee e
-  join employee_salary es on e.id = es.fk_employee_id;
+  join employee_salary es on e.id = es.fk_employee_id
+  group by e.id;
