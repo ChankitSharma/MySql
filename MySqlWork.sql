@@ -10,7 +10,7 @@ create table employee
 	id int unsigned not null unique auto_increment primary key,
 	first_name varchar(45) not null,
 	last_name varchar(45) not null,
-	age tinyint not null ,
+	age tinyint not null,
 	mobile_number varchar(20),
 	address text
 );
@@ -81,19 +81,19 @@ insert into employee_hobby (fk_employee_id, fk_hobby_id) values
 	(1,4),
 	(1,5);
     
-/* Update data of all tables */
+/* This is all Update Query's */
 update hobby set name = "Movies" where id = 3;
 update employee set mobile_number = 6378548864 where id = 2;
 update employee_salary set salary = 28000 where id = 7;
 update employee_hobby set fk_employee_id = 5 where id = 5;
 
-/* Delete data of all tables */
-delete from hobby where name = "writing";
-delete from employee where id = 3;
-delete from employee_salary where  id = 4;
-delete from employee_hobby where id = 3;
+/* This is all Delete Query's */
+delete from hobby where id in (2,6);
+delete from employee where id in (3,4);
+delete from employee_salary where  id in (4,5);
+delete from employee_hobby where id in (3,2);
 
-/* Truncate data of all tables */
+/* This is all Truncate Query's */
 truncate table hobby;
 truncate table employee;
 truncate table employee_salary;
@@ -104,7 +104,7 @@ select * from hobby;
 select * from employee;
 select * from employee_salary;
 select * from employee_hobby;
-    
+
 /* Create a select single query to get all employee name, all hobby_name in single column */
 
 select 
