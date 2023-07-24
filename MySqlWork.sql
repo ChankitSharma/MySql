@@ -20,7 +20,7 @@ create table employee_salary
 	id int unsigned not null unique auto_increment primary key,
 	fk_employee_id int unsigned not null,
 	salary int not null,
-	date DATE,
+	salary_date DATE,
 	foreign key (fk_employee_id) references employee(id)
 );
 
@@ -60,7 +60,7 @@ insert into employee values
 	(8,"Harshit","Sompura",28,8567982960,"prayagraj");
     
 /* employee_salary table*/
-insert into employee_salary (fk_employee_id, salary, date) values 
+insert into employee_salary (fk_employee_id, salary, salary_date) values 
 	(1,12000,'2023-5-1'),
 	(2,21500,'2023-5-1'),
 	(4,25000,'2023-5-1'),
@@ -120,17 +120,18 @@ from
 /* Create a select query to get  employee name, his/her employee_salary */
 
 select 
-	e.first_name, 
-	es.salary
+	CONCAT(e.first_name, ' ', e.last_name) as employee_name,
+	SUM(es.salary) AS total_salary
 from 
 	employee e
-	inner join employee_salary es on es.fk_employee_id = e.id;
+	inner join employee_salary es on es.fk_employee_id = e.id
+GROUP BY 
+    e.id;
 
 /* Create a select query to get employee name, total salary of employee, hobby name(comma-separated - you need to use subquery for hobby name) */
 
 select
-	e.first_name, 
-	e.last_name, 
+	CONCAT(e.first_name, ' ', e.last_name) as employee_name,
 	sum(es.salary) as salary, 
   (
     select 
